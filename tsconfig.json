@@ -3,13 +3,18 @@
     "baseUrl": ".",
     "inlineSourceMap": true,
     "inlineSources": true,
-    "module": "ESNext",
-    "target": "es5",
+    "module": "ESNext", // Kept for modern module syntax
+    "target": "ES2021", // Updated for a more modern target (ES5 is outdated)
     "allowJs": true,
     "noImplicitAny": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "lib": ["dom", "es5", "scripthost", "es2015"]
+    "lib": ["DOM", "ES2021"], // Simplified and modernized; removed "scripthost", "es5", "es2015"
+    "skipLibCheck": true, // Added to bypass library type checking for now
+    "strict": true, // Ensures all strict type checking is enabled
+    "esModuleInterop": true // Added for better compatibility with CommonJS/ESModule interop,
+    "typeRoots": ["./node_modules/@types", "./types"]
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts"],
+  "exclude": ["node_modules"] // Added to explicitly exclude node_modules
 }
